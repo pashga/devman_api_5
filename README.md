@@ -48,7 +48,7 @@ pip install -r requirements.txt
 Запустить данный скрипт можно следующей командой:
 
 ```python
-python3 main,py
+python3 main.py
 ```
 
 ![Результат запуска](https://github.com/pashga/devman_api_5/blob/main/screenshot_0.png)
