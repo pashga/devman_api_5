@@ -39,13 +39,13 @@ def get_salary_statistic_hh():
     salary_statistic = dict()
     moscow_area = 1
     count_days = 30
-    count_vacancies = 100
+    vacancies_count = 100
     for language in POPULAR_LANGUAGES:
         payload = {
             "text": f"Программист {language}",
             "area": moscow_area,
             "period": count_days,
-            "per_page": count_vacancies,
+            "per_page": vacancies_count,
         }
         vacancies_processed = 0
         total_salary = 0
@@ -74,7 +74,7 @@ def get_salary_statistic_hh():
 def get_salary_statistic_superjob(superjob_secret_key):
     url = "https://api.superjob.ru/2.0/vacancies/"
     salary_statistic = dict()
-    count_vacancies = 100
+    vacancies_count = 100
     headers = {
         "X-Api-App-Id": superjob_secret_key,
     }
@@ -82,7 +82,7 @@ def get_salary_statistic_superjob(superjob_secret_key):
         payload = {
             "keyword": f"Программист {language}",
             "town": "Москва",
-            "count": count_vacancies,
+            "count": vacancies_count,
         }
         vacancies_processed = 0
         total_salary = 0
