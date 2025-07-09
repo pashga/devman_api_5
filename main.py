@@ -111,18 +111,18 @@ def get_salary_statistic_superjob(superjob_secret_key):
         salary_statistic[language] = {
             "vacancies_found": vacancies["total"],
             "vacancies_processed": vacancies_processed,
-            "average_salary": average_salary
-                }
+            "average_salary": average_salary,
+        }
     return salary_statistic
 
 
 def create_table(salary_statistic, title):
     table_data = [['Язык программирования', 'Вакансий найдено', 'Вакансий обработано', 'Средняя зарплата']]
-    for language, values in salary_statistic.items():
-        language_data = list()
-        language_data.append(language)
-        language_data.extend(values.values())
-        table_data.append(language_data)
+    for language, vacancies in salary_statistic.items():
+        language_info = list()
+        language_info.append(language)
+        language_info.extend(vacancies.values())
+        table_data.append(language_info)
     table_instance = AsciiTable(table_data, title)
     return table_instance.table
 
